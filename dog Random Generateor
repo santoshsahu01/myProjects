@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <div id = "breed"> hII</div>
+    <div id = "tab"> Hi</div>
+   <div id= "img"> </div>
+    <div id="width"></div>
+    <div id="height"></div>
+    
+
+    
+    
+    
+<button id="fetchButton">Fetch Data</button>
+<script>
+let id = document.querySelector("#id")
+const headers = new Headers({
+  "Content-Type": "application/json",
+  "x-api-key": "DEMO-API-KEY"
+});
+
+var requestOptions = {
+  method: 'GET',
+  headers: headers,
+  redirect: 'follow'
+};
+
+
+
+fetch("https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1", requestOptions)
+  .then(response => response.json())
+  .then(data =>{
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let table= "";
+    data.map((values)=>{
+
+  
+        breed = `<height>${values.breeds}`;
+        table = `<h1>${values.name}</h1>`;
+        img = `<img src ="${values.url}">`;
+        width = `<width>${values.width}`;
+        height = `<height>${values.height}`;
+
+    })
+    
+
+
+    document.getElementById("tab").innerHTML = table ;  
+    document.getElementById("img").innerHTML = img ;  
+    document.getElementById("width").innerHTML = width ;  
+    document.getElementById("height").innerHTML = height ;  
+    document.getElementById("breed").innerHTML = breed ;  
+        
+ 
+
+
+    console.log(data)
+    })
+  
+      
+
+
+
+
+  
+  
+  
+ 
+  .catch(error => console.log('error', error));     
+  
+  
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+</body>
+</html>
